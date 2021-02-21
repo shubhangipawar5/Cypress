@@ -2,14 +2,14 @@
 // describe('veryfy the contact us form',()=>{
 //     it('with all mandatory input',()=>{
 //       cy.visit('https://automationteststore.com/')
-//       cy.get('a[href="https://automationteststore.com/index.php?rt=content/contact"]').as('contactUs')   --here we have used .as is a aliase given name contact us for long css selector
+//       cy.get('a[href="https://automationteststore.com/index.php?rt=content/contact"]').as('contactUs')   
 //       cy.get('@contactUs').click()
-//       cy.url().then(($curnturl)=>{   ---.then is promise in javascrit here used to get url and curnturl checks the contains or endswith  ethod,,in this console.log is written and outer to this cy.log is written
+//       cy.url().then(($curnturl)=>{  
 //           $curnturl.endsWith('contact')
-//           cy.get('#ContactUsFrm > h3').should('have.text','Contact Us Form')  ---shpuld hv confirms the text given is available
+//           cy.get('#ContactUsFrm > h3').should('have.text','Contact Us Form')  
 //           cy.get('#ContactUsFrm_first_name').type('Aayush')
 //           cy.get('#ContactUsFrm_email').type('aayushpawar@yahoo.com')
-//           cy.get('#ContactUsFrm_email').should('have.attr','name','email')   --sould hv attribute checks the atttribut name and value in the selected element
+//           cy.get('#ContactUsFrm_email').should('have.attr','name','email')   
 //           cy.get('#ContactUsFrm_email').should('have.attr','id','ContactUsFrm_email')
 //           cy.get('#ContactUsFrm_enquiry').type('hello,give me info about cypress')
 //           cy.get('#ContactUsFrm > div.form-group > div.col-md-6.col-sm-6 > button').click()
