@@ -1,0 +1,13 @@
+{
+    "baseUrl":"http://www.webdriveruniversity.com",
+
+
+
+
+    "env":{
+        "username":"shubh",
+        "password":"aayu"
+    },
+    "retries":1
+
+}
