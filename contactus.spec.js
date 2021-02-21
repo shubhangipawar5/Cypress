@@ -1,34 +1,133 @@
-                    /// <reference  types = "Cypress"/>
-// describe('veryfy the contact us form',()=>{
-//     it('with all mandatory input',()=>{
-//       cy.visit('https://automationteststore.com/')
-//       cy.get('a[href="https://automationteststore.com/index.php?rt=content/contact"]').as('contactUs')   
-//       cy.get('@contactUs').click()
-//       cy.url().then(($curnturl)=>{  
-//           $curnturl.endsWith('contact')
-//           cy.get('#ContactUsFrm > h3').should('have.text','Contact Us Form')  
-//           cy.get('#ContactUsFrm_first_name').type('Aayush')
-//           cy.get('#ContactUsFrm_email').type('aayushpawar@yahoo.com')
-//           cy.get('#ContactUsFrm_email').should('have.attr','name','email')   
-//           cy.get('#ContactUsFrm_email').should('have.attr','id','ContactUsFrm_email')
-//           cy.get('#ContactUsFrm_enquiry').type('hello,give me info about cypress')
-//           cy.get('#ContactUsFrm > div.form-group > div.col-md-6.col-sm-6 > button').click()
-//       })
+//Writing unit test Cases
+
+///<reference  types = "Cypress"/>
+describe('contact us page',()=>{
+    it('should submit with all mandatory fields',()=>{
+        cy.visit('http://webdriveruniversity.com/')
+        cy.get('#contact-us').then(($el)=>{
+           // $el.removeAttr('target')
+           $el.attr("target","_self")
+
+        })
+        cy.get('#contact-us').click()
+        cy.get('#contact_form > input:nth-child(1)')
+        cy.get('input[name="first_name"]').type('Aayush')
+        cy.get('input[name="last_name"]').type("Pawar")
+        cy.get('input[name="email"]').type("shubhangi5693@gmail.com")
+        cy.get('textarea.feedback-input').type('welcome to cypress!')
+        cy.get('#form_buttons > input:nth-child(2)').click()
+        cy.get('#contact_reply > h1').contains('Thank You for your Message!')
+        
+
+
+
+
+    })
+    ///reset field
+    it.skip('should submit with all mandatory fields',()=>{
+        cy.visit('http://webdriveruniversity.com/')
+        cy.get('#contact-us').then(($el)=>{
+           // $el.removeAttr('target')
+           $el.attr("target","_self")
+
+        })
+        cy.get('#contact-us').click()
+        cy.get('#contact_form > input:nth-child(1)')
+        cy.get('input[name="first_name"]').type('Aayush')
+        cy.get('input[name="last_name"]').type("Pawar")
+        cy.get('input[name="email"]').type("shubhangi5693@gmail.com")
+        cy.get('textarea.feedback-input').type('welcome to cypress!')
+        // cy.get('#form_buttons > input:nth-child(2)').click()
+        // cy.get('#contact_reply > h1').contains('Thank You for your Message!')
+        cy.get('input[type="reset"]').click()
+        cy.get('input[name="first_name"]').should('be.empty')
+        // // cy.get('input[name="first_name"]').should('have.text'," ")
+        // cy.get('button[type="reset"]').click().then(()=> {
+        //     cy.get('input[name="first_name"]').contains(' ')
+        //     document.querySelector('input[name="first_name"').textContent = " ";
+        //     if($('input[name="first_name"').text() === " "){
+        //         console.log('Test case pass')
+        //     }
+
+    })
+
+//     it('Using variables is the incorrect way of saving', () => {
+
+//         cy.visit('http://www.webdriveruniversity.com')
+//         // It basically breaks the cypress synchronus nature
+//         let contactUs = cy.get('#contact-us')
+//         contactUs.then(($el) =>{
+//             //$el.removeAttr('target')
+//             $el.attr("target","_self")
+//         })
+//         contactUs.click()
+//         //cy.visit('http://www.webdriveruniversity.com/Contact-Us/contactus.html')
+//         cy.get('input[name="first_name"]').type('Chinmay')
+//         cy.get('input[name="last_name"]').type('Deshpande')
+//         cy.get('input[name="email"]').type('chinmaydeshpande010@gmai.com')
+//         cy.get('textarea.feedback-input').type("Welcome to Cypress!")
+//         cy.get('#form_buttons > input:nth-child(2)').click()
+//         cy.get('#contact_reply > h1').contains('Thank You for your Message!')
 
 //     })
-// })
+
+//     it('Using variables is the incorrect way of saving', () => {
+
+//         cy.visit('http://www.webdriveruniversity.com')
+//         // It basically breaks the cypress synchronus nature
+//         let contactUs = cy.get('#contact-us')
+//         contactUs.then(($el) =>{
+//             //$el.removeAttr('target')
+//             $el.attr("target","_self")
+//         })
+//         contactUs.click()
+//         //cy.visit('http://www.webdriveruniversity.com/Contact-Us/contactus.html')
 
 
-// to check @ is missing then give error in email box
+//         //HTML ELEMENTS
 
-describe('validate contact us form',()=>{
-it('with all mandatory inputs',()=>{
-cy.visit('https://automationteststore.com/')
-cy.get('#footer > footer > section.footerlinks > div > div.pull-left > div > ul > li:nth-child(5) > a').click()
-cy.get('#ContactUsFrm_first_name').type('aayush pawar')
-cy.get('#ContactUsFrm_email').type("aayushpawaryahoo.com")
-cy.get('#ContactUsFrm_enquiry').type("Hello , Give me info about cypress")
-        cy.get('#ContactUsFrm > div.form-group > div.col-md-6.col-sm-6 > button').click()
-        cy.get('#field_12 > span > div.element_error.has-error').should('have.text',' E-Mail Address does not appear to be valid!')
-})
-})
+//         //#css seelector
+
+//         // tagName[attr = 'value']
+
+//         // xpath 
+
+//         //tagName[@att = 'value']
+
+
+//         //<h1 id = "chinmay" class = "red">Heading<h1>
+
+//         //h1[@id= 'chinmay']
+
+//         //Css  selector
+
+//         // shortcuts
+
+//         //#chinmay --id
+//         //.red  --class
+        
+//         //h1[id='chinmay']
+
+//         // h1[class='red']
+
+
+
+
+//         cy.get('input[name="first_name"]').type('Chinmay')
+//         cy.get('input[name="last_name"]').type('Deshpande')
+//         cy.get('input[name="email"]').type('chinmaydeshpande010@gmai.com')
+//         cy.get('textarea.feedback-input').type("Welcome to Cypress!")
+//         cy.get('#form_buttons > input:nth-child(2)').click()
+//         cy.get('#contact_reply > h1').contains('Thank You for your Message!')
+
+//     })
+
+
+
+
+
+
+
+
+
+    
